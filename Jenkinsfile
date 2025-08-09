@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 echo 'Deploying to server...'
-                sh 'scp -r /var/lib/jenkins/workspace/surveillance-pipeline dennistan@192.168.20.2:/var/www/'
+                sh 'scp -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/surveillance-pipeline dennistan@192.168.20.2:/var/www/'
                 sh 'python3 /var/www/surveillance-pipeline/app.py'
             }
         }
