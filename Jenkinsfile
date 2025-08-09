@@ -20,7 +20,7 @@ pipeline {
                 echo 'Deploying to server...'
                 sh 'scp -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/surveillance-pipeline dennistan@192.168.20.2:/var/www/'
                 sh 'ssh -o StrictHostKeyChecking=no dennistan@192.168.20.2 "rm -rf /var/www/surveillance-pipeline/"'
-                sh 'ssh -o StrictHostKeyChecking=no dennistan@192.168.20.2 "./var/www/surveillance-pipeline/startup.sh"'
+                sh 'ssh -o StrictHostKeyChecking=no dennistan@192.168.20.2 "/var/www/surveillance-pipeline/startup.sh"'
             }
         }
     }
