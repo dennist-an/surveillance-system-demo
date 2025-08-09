@@ -18,7 +18,8 @@ pipeline {
         stage('Deploy') { 
             steps {
                 echo 'Deploying to server...'
-                // Example: Deploy using scp or rsync to a remote server
+                scp -r /var/lib/jenkins/workspace/surveillance-pipeline dennistan@192.168.20.2:/var/www/
+                python3 /var/www/surveillance-pipeline/app.py
             }
         }
     }
